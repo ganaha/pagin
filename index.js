@@ -102,7 +102,6 @@ export default function(callback, options) {
         min = (total - range + 1) < 1 ? 1 : (total - range + 1)
         max = total
       }
-      console.log("min:%s, current: %s, max:%s", min, current, max)
       return Array.from(Array(range), (v, i) => i + min)
     },
     sortBy: function(key) {
