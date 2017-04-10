@@ -101,7 +101,7 @@ export default function(callback, options) {
                 min = (total - range + 1) < 1 ? 1 : (total - range + 1)
                 max = total
             }
-            return Array.from(Array(range), (v, i) => i + min)
+            return Array.from(Array(max - min + 1), (v, i) => i + min)
         },
         /**
          * 指定キーでソートする。
