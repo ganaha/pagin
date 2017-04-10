@@ -103,11 +103,17 @@ export default function(callback, options) {
             }
             return Array.from(Array(range), (v, i) => i + min)
         },
+        /**
+         * 指定キーでソートする。
+         */
         sortBy: function(key) {
             this.sort = key
             this.order = this.order === 'asc' ? 'desc' : 'asc'
             this.toPage(1)
         },
+        /**
+         * 指定キーでソートする場合の並び順。
+         */
         orderBy: function(key) {
             return this.sort === key ? this.order : ''
         },
