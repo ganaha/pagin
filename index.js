@@ -101,8 +101,7 @@ export default function(callback, options) {
                 min = (total - range + 1) < 1 ? 1 : (total - range + 1)
                 max = total
             }
-            let num = parseInt(max - min + 1)
-            return Array.from(Array(num), (v, i) => i + min)
+            return Array.from(Array((max - min + 1) || 1), (v, i) => i + min)
         },
         /**
          * 指定キーでソートする。
