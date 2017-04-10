@@ -35,7 +35,6 @@ export default function(callback, options) {
                 _this.totalCount = _this._getSubdata(res, _this.totalCountKey)
             }, function(e) {
                 _this.isLoading = false
-                console.log(e)
             })
         },
         /**
@@ -54,14 +53,14 @@ export default function(callback, options) {
          * 全ページ数
          */
         totalPage: function() {
-            return Math.ceil(this.totalCount / this.limit)
+            return Math.ceil(this.totalCount / parseInt(this.limit))
         },
         /**
          * 指定ページへ
          */
         toPage: function(optPage) {
             let page = (isNaN(optPage) || optPage < 1) ? 1 : optPage
-            this.offset = (page - 1) * this.limit
+            this.offset = (page - 1) * parseInt(this.limit)
             this._load()
             this.currentPage = page
         },
@@ -70,7 +69,7 @@ export default function(callback, options) {
          */
         prev: function() {
             if (this.hasPrev()) {
-                this.offset -= this.limit
+                this.offset -= parseInt(this.limit)
                 this._load()
                 this.currentPage--
             }
@@ -80,7 +79,7 @@ export default function(callback, options) {
          */
         next: function() {
             if (this.hasNext()) {
-                this.offset += this.limit
+                this.offset += parseInt(this.limit)
                 this._load()
                 this.currentPage++
             }
@@ -101,7 +100,7 @@ export default function(callback, options) {
                 min = (total - range + 1) < 1 ? 1 : (total - range + 1)
                 max = total
             }
-            return Array.from(Array(range), (v, i) => i + min)
+            return Array.from(Array(max - min + 1), (v, i) => i + min)
         },
         /**
          * 指定キーでソートする。
@@ -117,6 +116,9 @@ export default function(callback, options) {
         orderBy: function(key) {
             return this.sort === key ? this.order : ''
         },
+        /**
+         * dataに対して、ドットパス式でアクセスする。
+         */
         _getSubdata: function(data, path) {
             var val = data
             var segments = path.split('.')

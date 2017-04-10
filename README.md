@@ -25,22 +25,22 @@ or
 var options = {
     rangePages: 7,
     limit: 10,
-    recordsKeyName: 'records',
-    totalCountKeyName: 'totalCount'
+    recordsKey: 'records',
+    totalCountKey: 'totalCount'
 }
 var pagin = new Pagin(callback, options)
 ```
 
 ## Options
 
-| key               |   default    | description                                                                                          |
-|:------------------|:------------:|:-----------------------------------------------------------------------------------------------------|
-| limit             |      5       | A number of items per page.                                                                          |
-| rangePages        |      5       | A number of pages to display.                                                                        |
-| recordsKeyName    |  'records'   | Path to items in response. (dot-notation OK. ex: 'data.records' -> {"data": {"records": [<items>]}}) |
-| totalCountKeyName | 'totalCount' | Path to the total number of items in response. (dot-notation OK)                                     |
-| sort              |     'id'     | The item name to be sorted. It is included in the params passed to the callback.                     |
-| order             |    'desc'    | 'asc' or 'desc'. It is included in the params passed to the callback.                                |
+| key           |   default    | description                                                                                          |
+|:--------------|:------------:|:-----------------------------------------------------------------------------------------------------|
+| limit         |      5       | A number of items per page.                                                                          |
+| rangePages    |      5       | A number of pages to display.                                                                        |
+| recordsKey    |  'records'   | Path to items in response. (dot-notation OK. ex: 'data.records' -> {"data": {"records": [<items>]}}) |
+| totalCountKey | 'totalCount' | Path to the total number of items in response. (dot-notation OK)                                     |
+| sort          |     'id'     | The item name to be sorted. It is included in the params passed to the callback.                     |
+| order         |    'desc'    | 'asc' or 'desc'. It is included in the params passed to the callback.                                |
 
 ## API
 
