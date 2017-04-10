@@ -1,6 +1,6 @@
 {
   "name": "pagin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple javascript library for single page application(SPA).",
   "main": "index.js",
   "scripts": {
