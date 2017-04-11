@@ -1,5 +1,5 @@
 # pagin
-A simple javascript library for single page application(SPA).
+A simple pagination library for single page application(SPA).
 
 ## Installation
 
