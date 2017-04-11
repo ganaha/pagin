@@ -3,7 +3,7 @@
  *
  * @author ganaha
  */
-export default function(callback, options) {
+var Pagin = function(callback, options) {
     var defaultOptions = {
         limit: 5, // 表示件数
         offset: 0, // 開始位置
@@ -133,3 +133,5 @@ export default function(callback, options) {
     paginator._load()
     return paginator
 }
+export default Pagin
+window.Pagin = Pagin
