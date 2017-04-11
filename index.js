@@ -31,8 +31,8 @@ export default function(callback, options) {
                 keyword: _this.keyword
             }, function(res) {
                 _this.isLoading = false
-                _this.records = _this._getSubdata(res, _this.recordsKey)
-                _this.totalCount = _this._getSubdata(res, _this.totalCountKey)
+                _this.records = _this._getSubdata(res, _this.recordsKey, [])
+                _this.totalCount = _this._getSubdata(res, _this.totalCountKey, 0)
             }, function(e) {
                 _this.isLoading = false
             })
@@ -41,13 +41,14 @@ export default function(callback, options) {
          * 前ページの存在有無
          */
         hasPrev: function() {
-            return this.offset !== 0
+            return !isNaN(this.offset) && this.offset > 0
         },
         /**
          * 次ページの存在有無
          */
         hasNext: function() {
-            return (this.offset + this.records.length) < this.totalCount
+            if (isNaN(this.offset) || !(this.records instanceof Array) || isNaN(this.totalCount)) return false
+            return (Number(this.offset) + this.records.length) < this.totalCount
         },
         /**
          * 全ページ数
@@ -96,7 +97,7 @@ export default function(callback, options) {
             if (min <= 1) {
                 min = 1
                 max = (min + range - 1) < total ? (min + range - 1) : total
-            } else if (total < max) {
+            } else if (total <= max) {
                 min = (total - range + 1) < 1 ? 1 : (total - range + 1)
                 max = total
             }
@@ -119,11 +120,11 @@ export default function(callback, options) {
         /**
          * dataに対して、ドットパス式でアクセスする。
          */
-        _getSubdata: function(data, path) {
+        _getSubdata: function(data, path, defaultValue) {
             var val = data
             var segments = path.split('.')
             for (let i = 0; i < segments.length; i++) val = val[segments[i]]
-            return val;
+            return val || defaultValue
         }
     }
     // オプション値を反映

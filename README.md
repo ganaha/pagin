@@ -33,14 +33,14 @@ var pagin = new Pagin(callback, options)
 
 ## Options
 
-| key           |   default    | description                                                                                          |
-|:--------------|:------------:|:-----------------------------------------------------------------------------------------------------|
-| limit         |      5       | A number of items per page.                                                                          |
-| rangePages    |      5       | A number of pages to display.                                                                        |
-| recordsKey    |  'records'   | Path to items in response. (dot-notation OK. ex: 'data.records' -> {"data": {"records": [<items>]}}) |
-| totalCountKey | 'totalCount' | Path to the total number of items in response. (dot-notation OK)                                     |
-| sort          |     'id'     | The item name to be sorted. It is included in the params passed to the callback.                     |
-| order         |    'desc'    | 'asc' or 'desc'. It is included in the params passed to the callback.                                |
+| key           |   default    | description                                                                                                                                                   |
+|:--------------|:------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| limit         |      5       | A number of items per page.                                                                                                                                   |
+| rangePages    |      5       | A number of pages to display.                                                                                                                                 |
+| recordsKey    |  'records'   | Path to items in response. If the path does not exist, an empty array is returned. (dot-notation OK. ex.: 'data.records' -> {"data": {"records": [<items>]}}) |
+| totalCountKey | 'totalCount' | Path to the total number of items in response. If the path does not exist, 0 is returned. (dot-notation OK)                                                   |
+| sort          |     'id'     | The item name to be sorted. It is included in the params passed to the callback.                                                                              |
+| order         |    'desc'    | 'asc' or 'desc'. It is included in the params passed to the callback.                                                                                         |
 
 ## API
 

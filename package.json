@@ -4,7 +4,7 @@
   "description": "A simple javascript library for single page application(SPA).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,22 @@
   "bugs": {
     "url": "https://github.com/ganaha/pagin/issues"
   },
-  "homepage": "https://github.com/ganaha/pagin#readme"
+  "homepage": "https://github.com/ganaha/pagin#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha-reporter": "^2.2.3",
+    "karma-webpack": "^2.0.3",
+    "mocha": "^3.2.0",
+    "path": "^0.12.7",
+    "webpack": "^2.3.3"
+  }
 }
