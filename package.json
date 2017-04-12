@@ -1,8 +1,8 @@
 {
   "name": "pagin",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "A simple javascript library for single page application(SPA).",
-  "main": "dist/pagin.min.js",
+  "main": "index.js",
   "scripts": {
     "test": "karma start"
   },
@@ -14,6 +14,7 @@
     "pagination",
     "paginator",
     "paging",
+    "page",
     "pagin"
   ],
   "author": "ganaha",
@@ -27,7 +28,6 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "http-server": "^0.9.0",
     "jasmine": "^2.5.3",

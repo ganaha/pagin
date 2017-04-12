@@ -10,11 +10,19 @@ A simple pagination library for single page application(SPA).
 npm install --save pagin
 ```
 
+or
+
+```
+<script src="https://unpkg.com/pagin"></script>
+```
+
 ## Usage
 
 js
 ```
+// ES2015
 import Pagin from 'pagin'
+
 var callback = function(params, success, failure) {
     // ajax
 }

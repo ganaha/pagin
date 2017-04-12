@@ -1,4 +1,4 @@
-import Pagin from '../src/index'
+import Pagin from '../index'
 
 describe('Pagin index.js テスト', function() {
 
