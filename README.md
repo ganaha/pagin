@@ -18,7 +18,6 @@ or
 
 ## Usage
 
-js
 ```
 // ES2015
 import Pagin from 'pagin'
@@ -26,13 +25,15 @@ import Pagin from 'pagin'
 var callback = function(params, success, failure) {
     // ajax
 }
+```
+
+```
 var pagin = new Pagin(callback)
 ```
 
 or
 
 ```
-・・・
 var options = {
     rangePages: 7,
     limit: 10,
