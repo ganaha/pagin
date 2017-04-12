@@ -1,5 +1,8 @@
 # pagin
+
 A simple pagination library for single page application(SPA).
+
+![demo](./assets/demo.gif)
 
 ## Installation
 
