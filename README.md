@@ -13,7 +13,7 @@ npm install --save pagin
 or
 
 ```
-<script src="https://unpkg.com/pagin"></script>
+<script src="https://unpkg.com/pagin/dist/pagin.min.js"></script>
 ```
 
 ## Usage
